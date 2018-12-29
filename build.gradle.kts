@@ -1,3 +1,4 @@
+import mb.gitonium.GitoniumExtension
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 // HACK: load our plugin via buildscript classpath and apply to work around IntelliJ bug which prevents custom plugins in composite builds.
@@ -15,12 +16,14 @@ buildscript {
 apply {
   plugin("org.metaborg.gitonium")
 }
+val gitVersion = the<GitoniumExtension>().version
 
 plugins {
   kotlin("jvm") version "1.3.10" apply false
 }
 subprojects {
   group = "org.metaborg"
+  version = gitVersion
   repositories {
     mavenCentral()
     jcenter()
