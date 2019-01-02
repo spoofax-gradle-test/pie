@@ -1,3 +1,3 @@
 dependencies {
-  compile("org.metaborg:log.api:develop-SNAPSHOT")
+  compile("org.metaborg:log.api:0.1.0")
 }
